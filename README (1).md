@@ -1,53 +1,57 @@
 # 👗 Tech Threads: Fashion Trend Analyzer
 
-**Tech Threads** is a full-stack fashion trend analyzer that evaluates how trendy a user's outfit is by comparing it with real-time Google Trends data. Designed to promote fashion awareness, the system helps users determine how well their outfit aligns with current fashion trends based on mood, event, and weather.
+## Project Overview
+
+Tech Threads is a full stack fashion trend analyzer that evaluates the trendiness of an outfit. It takes into consideration, mood, event and weather of location based on the given user’s inputs, which is matched and compared to Google trends data in real time. It returns a match percentage and detailed summary to the user which can also be emailed to their respective ids. It’s objective is to check how trendy a user’s outfit is helping users be more fashion and trend aware.
 
 ---
 
 ## 🧠 Features
 
-- **Smart Outfit Matching:**  
-  Matches user outfit details (top, bottom, color, fabric, etc.) with trending keywords from Google Trends.
+1.Live outfit trend matching using Google Trends (pytrends module)
 
-- **Real-time Trend Analysis:**  
-  Uses PyTrends to fetch the latest fashion-related data based on geographic location and user mood/event.
+2.Real time weather/temperature for user’s inputted location is retrieved/accessed from the Open Weather API
 
-- **Match Percentage Score:**  
-  Calculates how closely the user’s outfit matches trending fashion data.
+3.Used Open Cage Data API, to find geocodes of user’s location(geocodeing) that was used to access real time Google trends data in given country using pytrends Module
 
-- **Email Summary Option:**  
-  Automatically sends the trend match summary to the user's email address.
+4.Outfit match percentage calculated based on trending queries in the Google Search engine
 
-- **User-friendly GUI:**  
-  Built using Tkinter with a clean layout, color themes, and interactive buttons.
+5.Tkinter GUI, for visual user interface
+
+6.Email summaries sent to given user’s email id, using smtplib module accesing it’s gmail server
+
+7.Saves data in SQLite3 Database
+
+8.Tracks highest match combination, which user’s can view, helping them effectively select their outfits
 
 ---
 
 ## 🚀 How It Works
 
-1. **User Inputs:**  
-   Users select their outfit details along with their current mood, event, and location (temperature retrieved using weather APIs).
+1.User selects their mood, event, outfit components (top/bottom/dress/etc.).
 
-2. **Keyword Generation:**  
-   A set of search keywords is generated from the inputs.
+2.System fetches temperature using weather API.
 
-3. **Trend Fetching:**  
-   Keywords are used to pull current trend data and related queries from Google Trends.
+3.Uses this and user input to generate fashion trend keywords.
 
-4. **Match Calculation:**  
-   Outfit keywords are compared with trending terms using intelligent loose-matching logic.
+4.Queries Google Trends for popularity of related keywords.
 
-5. **Result Display:**  
-   A match percentage is displayed in the GUI, along with the matched terms. Users can optionally receive the result via email.
+5.Compares user outfit components with trend data and calculates a match %.
+
+6.Displays the result and allows the user to email a summary.
+
+7.Option to check highest match combo so far.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Tkinter (Python GUI)
-- **Backend:** SQLite (for user data), PyTrends (Google Trends API), smtplib (Email Service), OpenWeatherMap API
-- **Language:** Python 3
-- **Environment:** Desktop application
+1.Frontend: Tkinter(Python GUI library)
+2.Backend: Python
+3.APIs: OpenWeather, Pytrends, OpenCage 
+4.Database: SQLite3
+5.Email: SMTP with Gmail APP password
+6.Version + Ctrl: Git +Github
 
 ---
 
@@ -58,13 +62,6 @@ techthreadsfinal.py      # Main application file (GUI + backend logic)
 TECH THREADS.docx        # Full project documentation (design + logic)
 README.md                # Project summary for GitHub
 ```
-
----
-
-## 📷 Screenshots
-
-> _Optional: You can add images of the interface here using_  
-> `![Screenshot](path/to/image.png)`
 
 ---
 
